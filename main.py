@@ -11,9 +11,10 @@ from forms import *
 from flask_gravatar import Gravatar
 from functools import wraps
 from forms import *
+import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get('APP_SECRET_KEY')
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
